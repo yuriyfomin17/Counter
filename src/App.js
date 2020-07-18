@@ -7,7 +7,6 @@ function App() {
     const [const3, setConst3] = useState(5);
     const [change, randomSetter] = useState();
     const [word, wordSetter] = useState();
-    let h = 0;
     const increment = () => {
         console.log('Increment', const1);
         setConst1(const1 + 1);
