@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [const1, setConst1] = useState(5);
+    const [const2, setConst2] = useState(5);
+    const [const3, setConst3] = useState(5);
+    const [change, randomSetter] = useState();
+    const [word, wordSetter] = useState();
+    let h = 0;
+    const increment = () => {
+        console.log('Increment', const1);
+        setConst1(const1 + 1);
+        setConst2(const2 + 10)
+        let curr_change = Math.floor(Math.random() * 11)
+        randomSetter(curr_change)
+        setConst3(const3 + curr_change)
+        wordSetter('increased')
+    };
+    const decrement = () => {
+        console.log('Minus One', const1);
+        setConst1(const1 - 1);
+        setConst2(const2 - 10)
+        let curr_change = Math.floor(Math.random() * 11)
+        randomSetter(curr_change)
+        setConst3(const3 - curr_change)
+        wordSetter('decreased')
+    };
+
+    return (
+        <div>
+            <button onClick={increment}>Increment</button>
+            <div>
+                One counter: {const1}
+
+            </div>
+            Ten counter: {const2}
+            <div>
+            </div>
+            Random Counter: {const3} was {word} by {change}
+            <div>
+
+                <button onClick={decrement}>Decrement</button>
+            </div>
+        </div>
+    );
 }
 
 export default App;
