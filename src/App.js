@@ -46,29 +46,42 @@ function App() {
 
     return (
         <div>
-            <div>
-                <button onClick={increment}>Add 1</button>
-                One counter
-                : {const1}
-                <button onClick={decrement}>Subtract 1</button>
-            </div>
-            <br/>
-            <div>
-                <button onClick={Add10}>Add 10</button>
-                10 Counter
-                : {const2}
-                <button onClick={Subtract10}>Subtract 10</button>
-            </div>
-            <br/>
-            <div>
-                <button onClick={addRandom}>Add random number</button>
-                Random Counter {word} {change}
-                : {const3}
-                <button onClick={SubtractRandom}>Subtract random number</button>
-            </div>
-            <div>
-                <button onClick={ResetAll}>Reset All</button>
-            </div>
+
+            <center>
+                <div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    One counter
+                    : {const1}
+                    <br/>
+                    <button onClick={increment}>Add 1</button>
+                    <button onClick={decrement}>Subtract 1</button>
+                </div>
+                <div>
+                    <br/>
+                    Ten Counter
+                    : {const2}
+                    <br/>
+                    <button onClick={Add10}>Add 10</button>
+
+                    <button onClick={Subtract10}>Subtract 10</button>
+                </div>
+                <br/>
+                <br/>
+                <div>
+                    Random Counter {word} {change}
+                    : {const3}
+                    <br/>
+                    <button onClick={addRandom}>Add random number</button>
+                    <button onClick={SubtractRandom}>Subtract random number</button>
+                </div>
+                <div>
+                    <br/>
+                    <button onClick={ResetAll}>Reset All</button>
+                </div>
+            </center>
+
 
         </div>
 
