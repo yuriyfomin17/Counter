@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 
 
 function App() {
-    const [const1, setConst1] = useState(5);
-    const [const2, setConst2] = useState(5);
-    const [const3, setConst3] = useState(5);
+    const [const1, setConst1] = useState(0);
+    const [const2, setConst2] = useState(0);
+    const [const3, setConst3] = useState(0);
     const [word, wordSetter] = useState(undefined);
     const [change, randomSetter] = useState(undefined);
     const increment = () => {
@@ -26,23 +26,31 @@ function App() {
     const addRandom = () => {
         const curr_change = Math.floor(Math.random() * 11)
         setConst3(const3 + curr_change);
-        wordSetter('was increased')
-        randomSetter('by ' + curr_change + ' to equal')
+        wordSetter('was increased');
+        randomSetter('by ' + curr_change + ' to equal');
     };
     const SubtractRandom = () => {
         const curr_change = Math.floor(Math.random() * 11)
         setConst3(const3 - curr_change);
-        wordSetter('was decreased')
-        randomSetter('by ' + curr_change + ' to equal')
+        wordSetter('was decreased');
+        randomSetter('by ' + curr_change + ' to equal');
+    };
+
+    const ResetAll = () => {
+        setConst1(0);
+        setConst2(0);
+        setConst3(0);
+        wordSetter('');
+        randomSetter('');
     };
 
     return (
         <div>
             <div>
-                <button onClick={increment}>Increment</button>
+                <button onClick={increment}>Add 1</button>
                 One counter
                 : {const1}
-                <button onClick={decrement}>Decrement</button>
+                <button onClick={decrement}>Subtract 1</button>
             </div>
             <br/>
             <div>
@@ -57,6 +65,9 @@ function App() {
                 Random Counter {word} {change}
                 : {const3}
                 <button onClick={SubtractRandom}>Subtract random number</button>
+            </div>
+            <div>
+                <button onClick={ResetAll}>Reset All</button>
             </div>
 
         </div>
