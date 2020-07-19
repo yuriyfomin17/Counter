@@ -27,13 +27,13 @@ function App() {
         const curr_change = Math.floor(Math.random() * 11)
         setConst3(const3 + curr_change);
         wordSetter('was increased')
-        randomSetter('by ' + curr_change)
+        randomSetter('by ' + curr_change + ' to equal')
     };
     const SubtractRandom = () => {
         const curr_change = Math.floor(Math.random() * 11)
         setConst3(const3 - curr_change);
         wordSetter('was decreased')
-        randomSetter('by ' + curr_change)
+        randomSetter('by ' + curr_change + ' to equal')
     };
 
     return (
@@ -54,8 +54,8 @@ function App() {
             <br/>
             <div>
                 <button onClick={addRandom}>Add random number</button>
-                Random Counter
-                : {const3} {word} {change}
+                Random Counter {word} {change}
+                : {const3}
                 <button onClick={SubtractRandom}>Subtract random number</button>
             </div>
 
